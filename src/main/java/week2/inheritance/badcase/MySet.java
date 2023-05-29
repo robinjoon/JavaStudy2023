@@ -1,7 +1,9 @@
 package week2.inheritance.badcase;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 public class MySet extends HashSet<String> {
     private int addTryCount = 0;
@@ -20,5 +22,15 @@ public class MySet extends HashSet<String> {
 
     public int getAddTryCount() {
         return addTryCount;
+    }
+
+    public static void main(String[] args) {
+        MySet mySet = new MySet();
+        mySet.add("aa");
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        mySet.addAll(list);
+        System.out.println(mySet.getAddTryCount());
     }
 }

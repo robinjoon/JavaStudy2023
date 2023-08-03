@@ -5,9 +5,7 @@ import week3.dto.WeatherData;
 
 public class WeatherService {
     WeatherData getWeatherData(){
+        String s = "";
         return new WeatherData();
-    }
-    EmailData convertToEmailData(WeatherData weather){
-        return new EmailData();
     }
 }

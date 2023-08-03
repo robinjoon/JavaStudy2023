@@ -1,8 +1,10 @@
 package oop.library.search;
 
+import oop.library.book.Book;
+import oop.library.member.Member;
+
 import java.util.List;
 
-public interface BookDB {
-    List<BookSearchResult> searchAll(String bookName);
-    BookSearchResult search(String bookName);
+interface BookDB {
+
 }

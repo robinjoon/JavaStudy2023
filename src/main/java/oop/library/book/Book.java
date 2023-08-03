@@ -8,9 +8,9 @@ public class Book {
     private BookState bookState;
     private Member lender;
 
-    public Book(String name, BookState bookState) {
+    public Book(String name) {
         this.name = name;
-        this.bookState = bookState;
+        this.bookState = BookState.ON_LIBRARY;
         lender = null;
     }
     public void lend(Member lender){
@@ -21,16 +21,13 @@ public class Book {
         this.lender = null;
         this.bookState = BookState.ON_LIBRARY;
     }
-
     public String getName() {
         return name;
     }
-
-    public BookState getBookState() {
-        return bookState;
-    }
-
     public Member getLender() {
         return lender;
+    }
+    public boolean canLend(){
+        return bookState == BookState.ON_LIBRARY;
     }
 }

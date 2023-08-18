@@ -15,12 +15,12 @@ public class SimpleLibrary implements Library {
     private final Map<Book, LocalDate> returnDateDB;
     private final Map<String,List<Book>> bookDB;
 
-    public SimpleLibrary(BookReturnCalculator bookReturnCalculator,BookLendCountCalculator bookLendCountCalculator) {
+    public SimpleLibrary(BookReturnCalculator bookReturnCalculator,BookLendCountCalculator bookLendCountCalculator, Map<String,List<Book>> bookDB) {
         this.returnCalculator = bookReturnCalculator;
         this.lendCountCalculator = bookLendCountCalculator;
         lendDB = new HashMap<>();
         bookDB = new HashMap<>();
-        bookDB.put("testBook",List.of(new Book("testBook"),new Book("testBook"),new Book("testBook"),new Book("testBook"),new Book("testBook")));
+        this.bookDB = bookDB;
         returnDateDB = new HashMap<>();
     }
 

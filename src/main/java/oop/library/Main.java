@@ -7,11 +7,16 @@ import oop.library.library.SimpleLibrary;
 import oop.library.member.BasicMember;
 import oop.library.member.Member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Library library = new SimpleLibrary(BookCalculator.getInstance(),BookCalculator.getInstance());
+        Map<String,List<Book>> bookDB = new HashMap<>();
+        bookDB.put("testBook",List.of(new Book("testBook"),new Book("testBook"),new Book("testBook"),new Book("testBook"),new Book("testBook")));
+
+        Library library = new SimpleLibrary(BookCalculator.getInstance(),BookCalculator.getInstance(),bookDB);
         Member member = new BasicMember(library);
 
         System.out.println(library.search("testBook"));

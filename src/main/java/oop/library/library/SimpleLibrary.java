@@ -19,7 +19,6 @@ public class SimpleLibrary implements Library {
         this.returnCalculator = bookReturnCalculator;
         this.lendCountCalculator = bookLendCountCalculator;
         lendDB = new HashMap<>();
-        bookDB = new HashMap<>();
         this.bookDB = bookDB;
         returnDateDB = new HashMap<>();
     }

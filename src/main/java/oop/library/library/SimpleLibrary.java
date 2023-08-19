@@ -8,14 +8,14 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
-public class SimpleLibrary implements Library {
+class SimpleLibrary implements Library {
     private final BookReturnCalculator returnCalculator;
     private final BookLendCountCalculator lendCountCalculator;
     private final Map<Member,List<Book>> lendDB;
     private final Map<Book, LocalDate> returnDateDB;
     private final Map<String,List<Book>> bookDB;
 
-    public SimpleLibrary(BookReturnCalculator bookReturnCalculator,BookLendCountCalculator bookLendCountCalculator, Map<String,List<Book>> bookDB) {
+    SimpleLibrary(BookReturnCalculator bookReturnCalculator,BookLendCountCalculator bookLendCountCalculator, Map<String,List<Book>> bookDB) {
         this.returnCalculator = bookReturnCalculator;
         this.lendCountCalculator = bookLendCountCalculator;
         lendDB = new HashMap<>();

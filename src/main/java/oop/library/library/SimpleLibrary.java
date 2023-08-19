@@ -26,7 +26,7 @@ class SimpleLibrary implements Library {
     @Override
     public LendResult lendBook(Member member, Book book) {
         List<Book> lendList = lendDB.getOrDefault(member, new ArrayList<>());
-        int allowLendCount = lendCountCalculator.calculateLendCount(member);
+        int allowLendCount = lendCountCalculator.calculate(member);
 
         if(lendList.size()>=allowLendCount){
             throw new IllegalStateException("더이상 대출할 수 없습니다.");
@@ -66,7 +66,7 @@ class SimpleLibrary implements Library {
     @Override
     public boolean canLend(Member member) {
         int nowLendCount = lendDB.getOrDefault(member,Collections.emptyList()).size();
-        return lendCountCalculator.calculateLendCount(member)>nowLendCount;
+        return lendCountCalculator.calculate(member)>nowLendCount;
     }
 
     @Override
